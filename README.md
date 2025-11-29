@@ -1,137 +1,64 @@
-# Building-an-AI-Classifier-Identifying-Cats-Dogs-Pandas-using-PyTorch
+# DL-Workshop-2
+
+## Building an AI Classifier: Identifying Cats, Dogs & Pandas with PyTorch
+## DATE : 29-11-2025
+## NAME : EASWAR R
+## REG.No : 212223230053
+## AIM :
+To develop, train, and evaluate deep learning models for accurate image classification using transfer learning.
+
+## ALGORITHMS:
+### Step 1 : 
+
+Load training, validation, and testing datasets from specified directory structure.
+
+### Step 2 :
+
+Apply resizing, normalization, and augmentation preprocessing steps to all images.
+
+### Step 3 :
 
 
-Building an AI Classifier: Identifying Cats, Dogs & Pandas using PyTorch
+Create dataset loaders for batching and efficient model training operations.
 
-This project demonstrates how to build an image classifier that can identify Cats, Dogs, and Pandas using Transfer Learning with ResNet18 and VGG19.
+### Step 4 :
 
-The experiment was implemented in Google Colab and trained on images stored in Google Drive.
+Load pretrained CNN model architecture such as ResNet18 or VGG19.
 
-## Project Highlights
+### Step 5 :
 
-Uses PyTorch & Torchvision
+Freeze convolutional feature extraction layers to preserve learned representations.
 
-Uses Transfer Learning (ResNet18 + VGG19)
+### Step 6 :
 
-Training, validation, testing data split
+Replace final classifier layer with new class-specific fully connected layers.
 
-Uses ImageFolder and a Custom Test Dataset
+### Step 7 :
 
-Includes transformations, normalization & augmentation
+Initialize loss function and optimizer for training the classifier layers only.
 
-Tracks training + validation accuracy
+### Step 8 :
 
-Saves best_model_resnet18.pth
+Train model over several epochs using forward pass and backpropagation.
 
-Predicts & displays results on random test images
+### Step 9 :
 
-## 📂 Dataset Structure
+Evaluate model accuracy and loss using validation dataset after each epoch.
 
-Make sure your dataset looks like this:
+### Step 10 :
 
+Combine categorical embeddings and continuous features, then pass through hidden layers sequentially.
+
+### Step 11 :
+
+Use trained model to predict classes for unlabeled test images.
+
+### Step 12 :
+
+Display predicted results and analyze model performance metrics comprehensively.
+
+### PROGRAM:
 ```
-Cat-Dog_Pandas/
-│── Train/
-│     ├── Cat/
-│     ├── Dog/
-│     └── Panda/
-│
-│── Valid/
-│     ├── Cat/
-│     ├── Dog/
-│     └── Panda/
-│
-└── Test/
-      ├── image1.jpg
-      ├── image2.jpg
-      └── ...
-```
-
-## 🚀 How to Run the Project (Google Colab)
-1. Mount Google Drive
-from google.colab import drive
-drive.mount('/content/drive')
-
-2. Install Libraries
-!pip install torch torchvision
-
-3. Check GPU
-import torch
-print("CUDA available:", torch.cuda.is_available())
-
-## 🧠 Training Using ResNet18
-
-Load ResNet18 pre-trained model
-
-Freeze convolution layers
-
-Replace the fully-connected layer
-
-Train only the classifier
-
-## 📌 Model Training Output
-
-The notebook prints:
-
-Training Loss & Accuracy
-
-Validation Loss & Accuracy
-
-Best Accuracy achieved
-
-Saved model: best_model_resnet18.pth
-
-## 🖼️ Prediction Visualization
-
-Displays random test images with predicted labels.
-
-## 🔥 Bonus: VGG19 Model Included
-
-A second model (VGG19) is prepared for training and comparison.
-
-📄 Output Files
-
-After training, the following file is generated:
-
-best_model_resnet18.pth
-
-
-Upload this file to GitHub under a folder called models.
-
-## 📘 Tech Stack
-
-Python
-
-PyTorch
-
-Torchvision
-
-Google Colab
-
-Matplotlib
-
-Sklearn
-
-## 🙌 Author
-
-EASWAR R
-
-AI & Deep Learning Learner
-
-## requirements.txt 
-torch
-torchvision
-numpy
-matplotlib
-pandas
-seaborn
-scikit-learn
-Pillow
-tqdm
-
-## main.ipynb
-
-```python
 import torch
 print("CUDA available:", torch.cuda.is_available())
 print("Device:", torch.device("cuda" if torch.cuda.is_available() else "cpu"))
@@ -402,10 +329,9 @@ VGG19model = VGG19model.to(device)
 # VGG19model.load_state_dict(torch.load('best_vgg19_model.pth'))
 ```
 
-## OUTPUT:
+### OUTPUT :
 
-<img width="950" height="950" alt="image" src="https://github.com/user-attachments/assets/f5a93853-71a2-4824-9b3d-ece36691245e" />
+<img width="857" height="748" alt="image" src="https://github.com/user-attachments/assets/76daef55-8664-4f7d-8273-b10aadb9e042" />
 
-
-## RESULT:
-Thus, the Building-an-AI-Classifier-Identifying-Cats-Dogs-Pandas-using-PyTorch is implemented and successfully executed.
+### RESULT:
+The model successfully classified images with high accuracy using transfer learning techniques.
